@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="plugins/bootstrap.min.css">
+    <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+    <!-- Script -->
+    <script>window.$ = window.JQuery = require('./plugins/jquery-3.3.1.min.js') </script>
+
+    <style>
+        body{
+            max-height: 100vh;
+        }
+        .file-name{
+            cursor: pointer;
+        }
+        .file-name:hover{
+            color: white;
+            background: #424242;
+            border-radius: 7px;
+        }
+        #list-container{
+            list-style-type: none;
+            overflow: scroll;
+            max-height: 50vh;
+        }
+
+        .float{
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 20px;
+            right: 20px;
+            background-color: #20c997;
+            color: #f7f7f7;
+            border-radius: 50px;
+            text-align: center;
+            box-shadow: 2px 2px 3px #999;
+        }
+        .my-float{
+        }
+
+    </style>
+</head>
+<body>
+    <div class="mx-2 mt-4">
+        <div class="card">
+            <div class="card-header">
+
+                <div class="row">
+
+                    <div class="row col-5">
+                        <div class="col-12">
+                            Select folder
+                        </div>
+                        <div class="col-12">
+                            <input id="select_folder" class="form-control btn btn-primary" value="choose folder" type="button">
+                        </div>
+                    </div>
+
+                    <div class="row col-4">
+                        <div class="col-12">
+                            Select extensions
+                        </div>
+                        <div class="col-12">
+                            <select id="extension" class="form-control">
+
+                                <!-- Audio files -->
+                                <!--<option disabled>Audio Files</option>-->
+                                <option selected value=".mp3">mp3</option>
+
+                                <!-- Video files -->
+                                <option value=".mp4">mp4</option>
+
+                                <!-- Image files -->
+                                <option value=".jpg">jpg</option>
+                                <option value=".jpeg">jpeg</option>
+
+                                <!-- Document files -->
+                                <option value=".pdf">pdf</option>
+
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="row col-3">
+                        <div class="col-12">
+                            Action
+                        </div>
+                        <div class="col-12">
+                            <select id="action" class="form-control">
+                                <option value="delete">Delete</option>
+                                <option value="rename">Rename</option>
+                            </select>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="card mx-2 my-2">
+                <div class="card-header">
+                    <div class="row">
+                        <div class="col-3"><span id="num_of_files"> 0</span> files</div>
+                        <div class="row col-9" id="rename-header" style="display: none">
+                            <div class="col-6">
+                                New name
+                                <input id="name" type="text" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="row border p-4">
+                        <ul class="row col-12" id="list-container">
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <button id="go" class="float" style="outline: none">
+        <i class="my-float fa fa-forward"></i>
+    </button>
+
+    <script>
+        require('./JS/index.js')
+    </script>
+</body>
+</html>

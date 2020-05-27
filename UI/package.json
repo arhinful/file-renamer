@@ -1,0 +1,16 @@
+{
+    "name": "simplefilemanager",
+    "version": "1.0.0",
+    "main": "main.js",
+    "scripts": {
+        "start": "electron ."
+    },
+    "devDependencies": {
+    "electron": "^6.0.11"
+  },
+    "arthur": "Arhinful Emamanuel",
+    "dependencies": {
+        "python-shell": "^0.4.0",
+        "sweetalert": "^2.1.2"
+    }
+}
